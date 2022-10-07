@@ -1,0 +1,55 @@
+2. Binary growing triangle
+Print a pattern with only binary alternating designs. Given an integer input n, print a growing right angled triangle with n rows. The pattern starts with 1 alternating with 0. Print “Invalid Input”, if the input deviates.
+
+Sample Input:
+4
+Sample Output:
+1
+10
+101
+1010
+10101
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int rows = sc.nextInt();
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= i; j++) {
+                if(j%2 == 0)
+                    System.out.print(0);
+                else
+                    System.out.print(1);
+            }
+            System.out.println();
+        }
+    }
+}
+
+Test case 1: 
+Input: 4
+Output:
+1
+10
+101
+1010
+
+Test case 2:
+Input: 5
+Output:
+1
+10
+101
+1010
+10101
+
+Test case 3:
+Input: 6
+Output:
+1
+10
+101
+1010
+10101
+101010
