@@ -1,0 +1,90 @@
+1. Binary Number Pattern
+	Print a pattern with only binary alternating designs. Given an integer input n, print a square with n rows and n columns. The pattern starts with 1 alternating with 0. Print “Invalid Input”, if the input deviates.
+
+Sample Input 1:
+5
+Sample Output 1:
+10101
+01010
+10101
+01010
+10101
+
+Sample Input 2:
+4
+Sample Output 2:
+1010
+0101
+1010
+0101
+
+Program:
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int rows = sc.nextInt();
+        for (int i = 1; i <= rows; i++) {
+            int num;
+            if(i%2 == 0) {
+                num = 0;
+                for (int j = 1; j <= rows; j++) {
+                    System.out.print(num);
+                    num = (num == 0)? 1 : 0;
+                }
+            }
+            else {
+                num = 1;
+                for (int j = 1; j <= rows; j++) {
+                    System.out.print(num);
+                    num = (num == 0)? 1 : 0;
+                }
+            }
+            System.out.println();
+        }
+    }
+}
+
+Test case 1: 
+Input: 4
+Output:
+1010
+0101
+1010
+0101
+
+Test case 2:
+Input: 5
+Output:
+10101
+01010
+10101
+01010
+10101
+
+Test case 3: 
+Input: 3
+Output:
+101
+010
+101
+
+Test case 4:
+Input: 6
+Output:
+101010
+010101
+101010
+010101
+101010
+010101
+
+Test case 5:
+Input: -2
+Output:
+Invalid Input
+
+Test case 6: 
+Input: alpha
+Output:
+Invalid Input
