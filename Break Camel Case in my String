@@ -1,0 +1,49 @@
+4. Break Camel Case in my String
+Complete the solution so that the function will break up camel casing, using a space between words.
+
+Example
+"camelCasing"  =>  "camel Casing"
+"identifier"   =>  "identifier"
+""             =>  ""
+
+Program:
+import java.util.*;
+public class Main
+{
+    public static String camelCase(String input) {
+        String myStr[] = input.split("(?=\\p{Upper})");
+        String finalString="";
+        String joined = String.join(" ", myStr);
+        return joined;
+    }
+	public static void main(String[] args) {
+	    String s;
+	    Scanner sc = new Scanner(System.in);
+	    s = sc.nextLine();
+		System.out.println(camelCase(s));
+	}
+}
+
+Test case 1:
+Input: 
+camelCasing
+Output:
+camel Casing
+
+Test case 2:
+Input:
+camelCasingTest
+Output:
+camel Casing Test
+
+Test case 3:
+Input:
+camelcasingtest
+Output:
+camelcasingtest
+
+Test case 4:
+Input:
+Interested
+Output:
+Interested
