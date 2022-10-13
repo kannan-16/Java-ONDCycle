@@ -1,0 +1,60 @@
+6. Middle character
+You are going to be given a word. Your job is to return the middle character of the word. If the word's length is odd, return the middle character. If the word's length is even, return the middle 2 characters.
+
+Examples:
+“test” should return "es"
+"testing" should return "t"
+"middle" should return "dd"
+"A" should return "A"
+
+Input
+A word (string) of length 0 < str < 1000 (In javascript you may get slightly more than 1000 in some test cases due to an error in the test cases). You do not need to test for this. This is only here to tell you that you do not need to worry about your solution timing out.
+Output
+The middle character(s) of the word represented as a string.
+
+Program:
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+        String word = sc.nextLine();	  
+        int len = word.length();
+        String final_word = "";
+        if(len%2 == 1)
+            final_word = Character.toString(word.charAt(len/2));
+        else 
+            final_word = Character.toString(word.charAt(len/2-1)) + Character.toString(word.charAt(len/2));
+	    System.out.println(final_word);
+    }
+}
+
+Test case 1:
+Input:
+middle
+Output:
+dd
+
+Test case 2:
+Input:
+test
+Output:
+es
+
+Test case 3:
+Input:
+testing
+Output:
+t
+
+Test case 4:
+Input:
+A
+Output:
+A
+
+Test case 5:
+Input:
+alpha
+Output:
+p
